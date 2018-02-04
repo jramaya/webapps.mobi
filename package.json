@@ -4,7 +4,7 @@
   "description": "https://webapps.mobi site",
   "main": "index.js",
   "scripts": {
-    "build": "browserify js/app.js > bundle.js"
+    "build": "browserify js/app.js | uglifyjs -m -c warnings=false > bundle.js"
   },
   "repository": {
     "type": "git",
