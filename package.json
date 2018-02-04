@@ -1,0 +1,19 @@
+{
+  "name": "webapps.mobi",
+  "version": "0.5.0",
+  "description": "https://webapps.mobi site",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify js/app.js > bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jramaya/webapps.mobi.git"
+  },
+  "author": "Edgar Amaya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jramaya/webapps.mobi/issues"
+  },
+  "homepage": "https://github.com/jramaya/webapps.mobi#readme"
+}
