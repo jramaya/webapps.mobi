@@ -107,7 +107,6 @@ var TextboxResize = function (el) {
 
 var App = {
     init: function () {
-        FastClick.attach(document.body);
         
         var textboxes = $$('h1');
         for (var i = 0; i<textboxes.length; i++) TextboxResize(textboxes[i]);
