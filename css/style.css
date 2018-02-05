@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, textarea, header, button {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, textarea, header, button {
     margin: 0;
     padding: 0;
     border: 0;
@@ -539,7 +539,7 @@ input, textarea {
 	background-repeat: no-repeat;
 	background-position: bottom;
 }
-
+/*
 li {
 	display: block;
     padding: 6px 15px 6px 0;
@@ -549,7 +549,7 @@ li {
 	background-size: 100% 1px;
 	background-repeat: no-repeat;
 	background-position: bottom;
-}
+}*/
 li .big {
 	font-weight: 500;
 }
@@ -557,7 +557,7 @@ li .light {
 	color: rgb(111, 111, 116);
 	padding: 10px 0 5px 0;
 }
-.arrowed .innerLi {
+.arrowed {
 	background-image: url(../img/listArrow.svg);
 	background-size: 15px 15px;
 	background-repeat: no-repeat;
@@ -614,14 +614,56 @@ em {
 }
 
 @media (-webkit-max-device-pixel-ratio: 1) {
-	li, input, textarea, header {
+	input, textarea, header {
 		background-image: none;
 		border-bottom: 1px solid rgb(200, 199, 204);
 	}
 }
 @media (max-device-pixel-ratio: 1) {
-	li, input, textarea, header {
+	input, textarea, header {
 		background-image: none;
 		border-bottom: 1px solid rgb(200, 199, 204);
 	}
+}
+
+ul, li {
+  padding: 0;
+  list-style: none; 
+}
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.4em;
+}
+
+/*Flex items*/
+.list {
+  display: flex;
+  flex-wrap: wrap;
+   margin: auto;
+}
+.list-item {
+	display: flex; 
+  padding: 0.5em;
+	width: 100%;
+	 margin: auto;
+}
+@media all and (min-width: 40em) {
+  .list-item {
+    width: 25%;
+  }
+}
+@media all and (min-width: 60em) {
+  .list-item {
+    width: 25%;
+  }
+}
+.list-content {
+	background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+	width: 100%;
+}
+.list-content p {
+	flex: 1 0 auto;
 }
