@@ -117,9 +117,9 @@ var App = {
         var navbtns = $$('header button');
         for (var i = 0; i<navbtns.length; i++) navbtns[i].addEventListener('click', Slide, false);
                 
-        var listitems = $$('#view-home li');
+        /*var listitems = $$('#view-home li');
         for (var i = 0; i<listitems.length; i++) listitems[i].addEventListener('click', Slide, false);
-        
+        */
     }
 };
 
