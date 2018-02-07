@@ -2,11 +2,26 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="apple-mobile-web-app-title" content="My App">
-		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta property="og:url" content="https://webapps.mobi"/>
+		<meta property="og:site_name" content="WebApps dot mobi"/>
+		<meta property="og:title" content="WebApps dot mobi"/>
+		<meta property="og:description" content="WebApp Store."/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:author" content="https://github.com/jramaya"/>
+		<link rel="apple-touch-icon" href="logo57.png"/>
+		<link rel="apple-touch-icon" sizes="72x72" href="logo72.png" />   <!-- note use a different image here -->
+		<link rel="apple-touch-icon" sizes="114x114" href="logo114.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<title>WebApps dot mobi</title>
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="manifest" href="manifest.json">
 		<script defer src="bundle.js"></script>
 	</head>
 	<body class="ios7"> <!-- native | ios7 -->
@@ -213,5 +228,45 @@
 				<div class="label">Tab 3</div>
 			</button>-->
 		</nav>
+		<script type="text/javascript">
+			if ('serviceWorker' in navigator) {
+			  navigator.serviceWorker
+				.register('service-worker.js', { scope: './' })
+				.then(function(registration) {
+				  console.log("Service Worker Registered");
+				})
+				.catch(function(err) {
+				  console.log("Service Worker Failed to Register", err);
+				})
+			}
+			// Function to perform HTTP request
+			var get = function(url) {
+			  return new Promise(function(resolve, reject) {
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState === XMLHttpRequest.DONE) {
+						if (xhr.status === 200) {
+							var result = xhr.responseText
+							result = JSON.parse(result);
+							resolve(result);
+						} else {
+							reject(xhr);
+						}
+					}
+				};
+				
+				xhr.open("GET", url, true);
+				xhr.send();
+			  }); 
+			};
+			/*get('https://api.nasa.gov/planetary/earth/imagery?api_key=fWfSMcDzyHfMuH3BW6jiIUBYaj3hKRyKBRTBqgEQ')
+			  .then(function(response) {
+				// There is an issue with the image being pulled from the API, so using a different one instead
+				document.getElementsByClassName('targetImage')[0].src = "https://api.nasa.gov/images/earth.png";
+			  })
+			  .catch(function(err) {
+				console.log("Error", err);
+			  })*/
+			</script>
 	</body>
 </html>
