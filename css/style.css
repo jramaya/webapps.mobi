@@ -550,9 +550,7 @@ li {
 	background-repeat: no-repeat;
 	background-position: bottom;
 }*/
-li .big {
-	font-weight: 500;
-}
+
 li .light {
 	color: rgb(111, 111, 116);
 	padding: 10px 0 5px 0;
@@ -644,7 +642,7 @@ h2 {
 .list-item {
 	display: flex; 
   padding: 0.5em;
-	width: 100%;
+	width: 33.33%;
 	 margin: auto;
 }
 @media all and (min-width: 40em) {
@@ -661,9 +659,36 @@ h2 {
 	background-color: #fff;
   display: flex;
   flex-direction: column;
-  padding: 1em;
 	width: 100%;
+	text-align: center;
 }
 .list-content p {
 	flex: 1 0 auto;
+}
+
+.light img{
+	width: 128px;
+	height: 128px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+li .big {
+	all: revert;
+	color: gray;
+	text-justify: distribute;
 }
